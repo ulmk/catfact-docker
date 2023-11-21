@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sorted</title>
+  <style>
+    .breed-group {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px 0; 
+    }
+    
+    .heading {
+      background: #eee;
+      padding: 5px;
+    }
+    
+    .breeds {
+      display: flex;
+      flex-wrap: wrap;  
+    }
+    
+    .breed {
+      padding: 5px 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      margin: 5px;
+    }
+    </style>
+</head>
+<body>
+
+  <h1>Cat Breeds</h1>
+  <p>Here is where I would display cat breed data...</p>
+
+    {{range .}}
+
+    <div class="breed-group">
+
+      <div class="heading">
+        <h2>{{.Country}}</h2>
+      </div>
+
+      <div class="breeds">
+        {{range .Breeds}}
+          <span class="breed">{{.}}</span>
+        {{end}}
+      </div>
+
+    </div>
+
+    {{end}}
+</body>
+</html>

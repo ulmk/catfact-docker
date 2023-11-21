@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cats Breeds</title> 
+    <style>
+        body {
+            background: #eee; 
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Index</h1>
+        <p>Hello to catfacts data</p>
+        <p>Original site</p>
+        {{ .URL }}
+    </div>
+    <div id="fact">
+        <p>Loading...</p>  
+      </div>
+
+    <script>
+        setInterval(function() {
+          fetch('/facts')
+            .then(res => res.text())
+            .then(fact => {
+              //document.getElementById('fact').innerHTML = fact;  
+              document.body.innerHTML += `<p>${fact}</p>`;
+              console.log("new fetch");
+            });
+        }, 2000);
+      </script>
+</body>
+</html>

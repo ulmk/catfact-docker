@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cats</title>
+  <style>
+    .breed {
+      border: 1px solid #ddd; 
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .details {
+      background-color: #eee;
+      padding: 5px 10px;
+    }
+    </style>
+</head>
+<body>
+
+  <h1>Cat Breeds</h1>
+  <p>Here is where I would display cat breed data...</p>
+  {{range .}}
+  <div class="breed">
+    <h3>{{.Breed}}</h3>
+    
+    <div class="details">
+      <p>Country: {{.Country}}</p>
+      <p>Coat: {{.Coat}}</p>
+    </div>
+  
+  </div>
+  {{end}}
+</body>
+</html>
